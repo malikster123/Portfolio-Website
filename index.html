@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Personal Projects</title>
+  <style>
+    /* Add your custom CSS styles here */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    
+    h1 {
+      margin: 0;
+    }
+    
+    main {
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+      max-height: 100vh;
+      overflow-y: auto;
+    }
+    
+    .project {
+      margin-bottom: 20px;
+      width: calc(33.33% - 20px);
+      max-width: 300px;
+      background-color: #f5f5f5;
+      padding: 20px;
+      border-radius: 5px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+    
+    .project:hover {
+      transform: scale(1.05);
+    }
+    
+    .project h2 {
+      margin-top: 0;
+      font-size: 22px;
+    }
+    
+    .project:hover .project-image::after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 18px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .project:hover .project-image::after {
+      opacity: 1;
+    }
+    
+    .project-image {
+      position: relative;
+      width: 100%;
+      height: 200px;
+      background-size: cover;
+      background-position: center;
+      cursor: pointer;
+    }
+    
+    .project-description {
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+    
+    .project-link {
+      display: block;
+      color: #333;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+    
+    @media (max-width: 600px) {
+      .project {
+        width: 100%;
+      }
+    }
+    
+    @media (min-width: 1200px) {
+      .project {
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+      
+      .project h2 {
+        font-size: 24px;
+      }
+      
+      .project-description {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Personal Projects</h1>
+  </header>
+  
+  <main>
+
+    <div class="project">
+      <h2>AWS CV Website</h2>
+      <a href="http://subhaanmalik.co.uk/" target="_blank">
+        <div class="project-image" style="background-image: url('images/AWSCVPage.png');" data-text="Live Example"></div>
+      </a>
+      <p class="project-description">A static website for my CV was created using HTML, Bootstrap, and JavaScript, and deployed and managed using AWS services, specifically S3 Bucket and Route 53.</p>
+      <a href="http://subhaanmalik.co.uk/" target="_blank" class="project-link">Demo</a>
+      <a href="https://github.com/malikster123/AWS-Live-CV" target="_blank" class="project-link">GitHub</a>
+    </div>
+
+    <div class="project">
+        <h2>AWS Docker project</h2>
+        <a href="http://2048-env.eba-jqnu3z82.us-east-1.elasticbeanstalk.com/" target="_blank">
+          <div class="project-image" style="background-image: url('images/AWSDocker.png');" data-text="Live Example"></div>
+        </a>
+        <p class="project-description">This project containerized a game called 2048 using Docker and the provided GitHub repository (https://github.com/gabrielecirulli/2048). AWS Elastic Beanstalk was used to deploy the containerized game.</p>
+        <a href="http://2048-env.eba-jqnu3z82.us-east-1.elasticbeanstalk.com/" target="_blank" class="project-link">Demo</a>
+        <a href="https://github.com/malikster123/2048-Game-Docker" target="_blank" class="project-link">GitHub</a>
+    </div>
+
+    <div class="project">
+        <h2>Full-Stack Cinema Website</h2>
+        <a href="https://github.com/malikster123/Cinema-Website-Frontend" target="_blank">
+          <div class="project-image" style="background-image: url('images/QACINEMAPROJECT.png');" data-text="GitHub"></div>
+        </a>
+        <p class="project-description">Creating a user-friendly movie website was the goal of the full-stack cinema website project. Express.js and Node.js were used for the backend, MongoDB was used for data storage, Postman was used for API testing, and React.js was used for the frontend. Through the use of this tech stack, we were able to develop a seamless and interactive movie website.</p>
+        <!-- <a href="http://subhaanmalik.co.uk/" target="_blank" class="project-link">Demo</a> -->
+        <a href="https://github.com/malikster123/Cinema-Website-Frontend" target="_blank" class="project-link">GitHub (Front-End) </a>
+        <a href="https://github.com/malikster123/Cinema-Website-Backend" target="_blank" class="project-link">GitHub (Back-End) </a>
+    </div>
+
+    <div class="project">
+        <h2>AWS To the Power Of</h2>
+        <a href="https://dev.d3q6knja265l4y.amplifyapp.com/" target="_blank">
+          <div class="project-image" style="background-image: url('images/AWSPower.png');" data-text="Live Example"></div>
+        </a>
+        <p class="project-description">The game "To the Power Of" allows users to find any number's power. The following technology stack was used in the development of this web application:
+            <br><b>AWS Amplify:</b> To develop and host the webpage. 
+            <br><b>AWS Lambda:</b> To write the games function.
+            <br><b>AWS Gateway:</b> To invoke the Lambda function.
+            <br><b>DynamoDB:</b> to store the application's results
+            <br><b>AWS IAM:</b> Robust permission management for Lambda execution roles..</p>
+        <a href="https://dev.d3q6knja265l4y.amplifyapp.com/" target="_blank" class="project-link">Demo</a>
+        <a href="https://github.com/malikster123/AWS-ToThePowerOf" target="_blank" class="project-link">GitHub</a>
+      </div>
+  
+      <div class="project">
+          <h2>Java Inventory Management System</h2>
+          <a href="https://github.com/malikster123/Software-Core-Fundamental-Project" target="_blank">
+            <div class="project-image" style="background-image: url('images/JavaCrud.png');" data-text="Github"></div>
+          </a>
+          <p class="project-description">My Inventory Management System project. Over the last five weeks with QA Academy, I have gained a wide range of skills. It was written in Java, and the database was created and stored in MySQL, which was then connected and transported into Java. IMS allows users to perform basic CRUD operations. When an order is placed, the system provides the Items ID, Quantity, and Total Cost.</p>
+          <!-- <a href="http://subhaanmalik.co.uk/" target="_blank" class="project-link">Demo</a> -->
+          <a href="https://github.com/malikster123/Software-Core-Fundamental-Project" target="_blank" class="project-link">GitHub</a>
+      </div>
+  
+      <div class="project">
+          <h2>HTML Email</h2>
+          <a href="https://malikster123.github.io/email-challange/" target="_blank">
+            <div class="project-image" style="background-image: url('images/HTML-AD.png');" data-text="Live Example"></div>
+          </a>
+          <p class="project-description">An email advertisement that has been made using HTML code.</p>
+          <a href="https://malikster123.github.io/email-challange/" target="_blank" class="project-link">Demo</a>
+          <a href="https://github.com/malikster123/email-challange" target="_blank" class="project-link">GitHub</a>
+      </div>
+    
+    
+    
+  </main>
+</body>
+</html>
